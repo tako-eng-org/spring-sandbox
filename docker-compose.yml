@@ -2,6 +2,25 @@ version: '3'
 
 services:
   app:
-    image: openjdk:11-jdk-slim
-    ports: 
+    image: spring-sandbox/app
+    build:
+      context: .
+    ports:
       - "8080:8080"
+    depends_on:
+      - mysql
+
+  nginx:
+    image: 1.19.1-alpine
+
+  mysql:
+    image: mysql:5.6
+    command: mysqld --character-set-server=utf8mb4
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=spring
+    mem_limit: 1g
+    volumes:
+      - ./docker/db/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/db/etc:/etc/mysql/conf.d
+      - ./docker/db/volumes:/var/lib/mysql

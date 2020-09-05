@@ -16,7 +16,7 @@ cd app
 ./gradlew bootRun
 
 # open in browser
-http://localhost:80080
+http://localhost:8080
 ```
 
 ## Debugging
@@ -24,3 +24,9 @@ http://localhost:80080
 - Press `F5` key
 - Set Break Point to source code
 - Open in browser `http://localhost:8080`
+
+---
+
+## 環境構築メモ
+
+[SpringとMySQLの接続](https://spring.pleiades.io/guides/gs/accessing-data-mysql/)

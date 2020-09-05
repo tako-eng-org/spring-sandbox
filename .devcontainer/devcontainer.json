@@ -28,7 +28,8 @@
 	"extensions": [
 		"pivotal.vscode-spring-boot",
 		"vscjava.vscode-java-pack",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"gabrielbb.vscode-lombok"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

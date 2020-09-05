@@ -17,6 +17,9 @@ cd app
 
 # open in browser
 http://localhost:8080
+
+# phpMyAdmin
+http://localhost:8081
 ```
 
 ## Debugging

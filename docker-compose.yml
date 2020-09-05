@@ -6,7 +6,7 @@ services:
     build:
       context: .
     ports:
-      - "8080:8080"
+      - 8080:8080
     depends_on:
       - mysql
 
@@ -20,3 +20,17 @@ services:
       - ./docker/db/initdb.d:/docker-entrypoint-initdb.d
       - ./docker/db/etc:/etc/mysql/conf.d
       - ./docker/db/volumes:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.0.2
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=password
+    ports:
+      - 8081:80
+    links:
+      - mysql
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions

@@ -10,5 +10,3 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /workspace
 WORKDIR /workspace
 COPY ./app /workspace/app
-
-RUN cd app && ./gradlew build

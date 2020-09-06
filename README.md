@@ -42,6 +42,9 @@ $ docker-compose exec mysql bash
 $ mysql -u root -p
 Enter password: ここで password と入力
 
+# 以下のコマンドだとuseコマンドなしで一気に入れる
+$ mysql -uroot -ppassword spring
+
 # データベースの選択
 mysql> use spring
 
@@ -49,8 +52,8 @@ mysql> use spring
 mysql> show tables;
 
 # テーブル構造の確認
-mysql> desc users;
+mysql> desc user;
 
 # select
-mysql> select * from users;
+mysql> select * from user;
 ```

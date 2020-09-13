@@ -7,8 +7,35 @@
 </head>
 <body>
   <h1>Hello, Spring Boot!!!</h1>
-  <ul th:each="user : ${users}">
-    <li th:text="${user.name}"></li>
-  </ul>
+  <!-- <ul th:each="user : ${users}">
+    <li th:text="${user.name}"></li> -->
+  <!-- //登録した支出レコードをレコード数分表示する -->
+  <div id="contents">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <form action="#" th:action="@{/remove}" method="post">
+              <ul th:each="record : ${allRecords}">
+                <input class="form-check-input" type="checkbox" name="id" th:value="${record.id}" />
+                <label class="form-check-id" th:text="${record.id}"></label>
+                <label class="form-check-label" th:text="${record.body}"></label>
+                <!-- 更新処理画面へ遷移するボタン -->
+                <a th:href="@{${record.id}}">編集</a>
+                <!-- 更新処理画面へ遷移するボタン -->
+              </ul>
+              <p><input type="submit" value="削除" /></p>
+            </form>
+
+            <form action="#" th:action="@{/register}" th:object="${todo}" method="post">
+              <p>Message: <input type="text" th:field="*{body}" /></p>
+              <p><input type="submit" value="登録" /></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

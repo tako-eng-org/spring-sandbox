@@ -17,14 +17,12 @@ import java.sql.Timestamp;
 @Getter // lombokによる
 @Setter // lombokによる
 public abstract class AbstractModel {
-  // 作成日時のカラムを作成する
   @CreatedDate
   @Column(nullable = false)
-  private Timestamp createdDate;
+  private Timestamp createdDate; // 作成日時
 
-  // 更新日時のカラムを作成する
   @LastModifiedDate
   @Column(nullable = false)
-  private Timestamp lastModifiedDate;
+  private Timestamp lastModifiedDate; // 更新日時
 
 }

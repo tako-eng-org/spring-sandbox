@@ -25,4 +25,6 @@ public class User extends AbstractModel {
 
   @Column(nullable = false)
   private String email;
+
+  // 作成日時、更新日時はAbstractModelより作成する
 }

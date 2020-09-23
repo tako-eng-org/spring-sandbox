@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Column;
 import com.example.demo.jpa.AbstractModel;
+import java.sql.Timestamp;
 
 @Entity
 @Getter
@@ -15,10 +16,24 @@ import com.example.demo.jpa.AbstractModel;
 public class Expense extends AbstractModel {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id; // 支出id
+  private Integer id; // 支出明細id
+
+  // @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer userId; // ユーザid
+
+  // @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer categoryId; // 支出カテゴリid
 
   @Column(nullable = false)
-  private int expenseInt; // カテゴリ名
+  // TODO 型違う気がする。見直す
+  private Timestamp expenseDate;
 
-  // 作成日時、更新日時はAbstractModelより作成する
+  private Integer expenseMemo; // 支出明細メモ
+
+  @Column(nullable = false)
+  private int expenseInt; // 支出明細額
+
+  // 支出登録日付、更新日時はAbstractModelより作成する
 }

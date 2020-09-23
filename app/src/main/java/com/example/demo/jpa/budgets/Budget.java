@@ -1,4 +1,4 @@
-package com.example.demo.jpa.categories;
+package com.example.demo.jpa.budgets;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,17 +12,21 @@ import com.example.demo.jpa.AbstractModel;
 @Entity
 @Getter
 @Setter
-public class Category extends AbstractModel {
+public class Budget extends AbstractModel {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id; // 支出カテゴリid
+  private Integer id; // 月予算id
 
   // @Id
   // @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer userId; // ユーザid
 
   @Column(nullable = false)
-  private String categoryName; // 支出カテゴリ名
+  // TODO 年月までを入力する型
+  private String budgetYearMonth; // 予算年月
 
-  // 作成日時(支出カテゴリ作成日時)、更新日時はAbstractModelより作成する
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int budgetForMonth; // 月予算額
+
+  // 作成日時(月予算登録日時)、更新日時はAbstractModelより作成する
 }

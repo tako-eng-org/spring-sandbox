@@ -15,16 +15,16 @@ import com.example.demo.jpa.AbstractModel;
 public class User extends AbstractModel {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer userId;
+  private Integer userId; // ユーザid
 
   @Column(nullable = false)
-  private String name;
+  private String name; // ユーザ名
 
   @Column(nullable = false)
-  private String password;
+  private String password; // ユーザのログインパスワード
 
   @Column(nullable = false)
-  private String email;
+  private String email; // メールアドレス(一意)
 
-  // 作成日時、更新日時はAbstractModelより作成する
+  // 作成日時(ユーザ登録日付)、更新日時はAbstractModelより作成する
 }

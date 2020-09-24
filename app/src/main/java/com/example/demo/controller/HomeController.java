@@ -45,8 +45,8 @@ public class HomeController {
     model.addAttribute("category", new Category());
     // ページのentityを取得する
     // https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html?is-external=true#findAll-org.springframework.data.domain.Pageable-
-    final List<Category> list = CategoryRepository.findAll();
-    model.addAttribute("allRecords", list);
+    // final List<Category> list = CategoryRepository.findAll();
+    // model.addAttribute("allRecords", list);
     return "list"; // viewのファイル名を拡張子なしで記述する
   }
 
@@ -55,7 +55,7 @@ public class HomeController {
   public String register(@ModelAttribute final Expense expense, final Model model) {
     expense.setCreatedDate(new Timestamp(System.currentTimeMillis()));
     expense.setLastModifiedDate(new Timestamp(System.currentTimeMillis()));
-    ExpenseRepository.save(expense);
+    // ExpenseRepository.save(expense);
     // return index(model, todo);
     // index -> register -> index
     // index -> submit -> register -> ブラウザにredirect指示(indexへ) -> index表示
@@ -66,7 +66,9 @@ public class HomeController {
   @PostMapping(value = "/remove")
   public String remove(final int id[], final Model model) { // ここの"id"は/のname="id"
     for (final int removeId : id) {
-      todoRepository.deleteById(removeId);
+      // todoRepository.deleteById(removeId);
+      System.out.println("test");
+      ;
     }
     return "redirect:/";
   }

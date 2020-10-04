@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- BootstrapのCSS読み込み -->
-  <link href="css/adminlte.min.css" rel="stylesheet">
+  <!-- <link href="../css/adminlte.min.css" rel="stylesheet"> -->
+  <link th:href="@{/css/adminlte.min.css}" rel="stylesheet" type="text/css">
   <!-- jQuery読み込み -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <!-- BootstrapのJS読み込み -->
@@ -12,37 +13,49 @@
   <title>Spring Sandbox</title>
 </head>
 <body>
-  <h1>Hello, Spring Boot!!!</h1>
+  <div class="container">
+    <h1>Hello, Spring Boot</h1>
+    <div class="row">
+      <div class="col-md-4">test1</div>
+      <div class="col-md-4">test2</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">test1</div>
+      <div class="col-md-4">test2</div>
+      <button class="btn btn-primary">ボタン</button>
+    </div>
+  </div>
+  </div>
   <!-- <ul th:each="user : ${users}">
     <li th:text="${user.name}"></li> -->
   <!-- //登録した支出レコードをレコード数分表示する -->
-  <div id="contents">
+  <!-- <div id="contents">
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="form-check">
-            <h2>タグのテスト</h2>
-            <!-- <form action="#" th:action="@{/remove}" method="post">
+            <h2>タグのテスト</h2> -->
+  <!-- <form action="#" th:action="@{/remove}" method="post">
               <ul th:each="record : ${allRecords}">
                 <input class="form-check-input" type="checkbox" name="id" th:value="${record.id}" />
                 <label class="form-check-id" th:text="${record.id}"></label>
                 <label class="form-check-label" th:text="${record.body}"></label> -->
-            <!-- 更新処理画面へ遷移するボタン -->
-            <!-- <a th:href="@{${record.id}}">編集</a> -->
-            <!-- 更新処理画面へ遷移するボタン -->
-            <!-- </ul>
+  <!-- 更新処理画面へ遷移するボタン -->
+  <!-- <a th:href="@{${record.id}}">編集</a> -->
+  <!-- 更新処理画面へ遷移するボタン -->
+  <!-- </ul>
               <p><input type="submit" value="削除" /></p>
             </form> -->
 
-            <!-- <form action="#" th:action="@{/register}" th:object="${todo}" method="post">
+  <!-- <form action="#" th:action="@{/register}" th:object="${todo}" method="post">
               <p>Message: <input type="text" th:field="*{body}" /></p>
               <p><input type="submit" value="登録" /></p>
             </form> -->
-          </div>
+  <!-- </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 </body>
 </html>

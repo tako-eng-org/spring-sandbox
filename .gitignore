@@ -32,7 +32,7 @@ out/
 /.nb-gradle/
 
 ### VS Code ###
-# .vscode/
+.vscode/
 
 ### Docker ###
 docker/db/volumes
